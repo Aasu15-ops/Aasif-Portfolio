@@ -19,8 +19,7 @@ import {
   SiPandas,
   SiNumpy,
   SiTableau,
-  SiJupyter,
-  SiVisualstudiocode
+  SiJupyter
 } from "react-icons/si";
 
 
