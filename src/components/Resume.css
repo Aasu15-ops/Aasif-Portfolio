@@ -1,0 +1,61 @@
+.resume-section {
+  padding: 80px 20px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  text-align: center;
+}
+
+.resume-section h2 {
+  font-size: 36px;
+  color: #61dafb;
+  margin-bottom: 10px;
+}
+
+.resume-section p {
+  color: #8b949e;
+  margin-bottom: 30px;
+}
+
+.resume-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.resume-btn {
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+/* Download */
+.resume-btn.primary {
+  background-color: #61dafb;
+  color: #0d1117;
+}
+
+.resume-btn.primary:hover {
+  background-color: #4fc3e8;
+}
+
+/* Preview */
+.resume-btn.secondary {
+  border: 2px solid #61dafb;
+  color: #61dafb;
+}
+
+.resume-btn.secondary:hover {
+  background-color: #61dafb;
+  color: #0d1117;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .resume-section h2 {
+    font-size: 28px;
+  }
+}

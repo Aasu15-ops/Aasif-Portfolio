@@ -1,0 +1,149 @@
+/* Section */
+.contact {
+  padding: 80px 20px;
+  background: var(--card-bg);
+  color: var(--text-color);
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  color: #bdbdbd;
+  margin-bottom: 30px;
+}
+
+/* Form */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #2a2a2a;
+  background: #151515;
+  color: #fff;
+  outline: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #9a9a9a;
+}
+
+.contact-form button {
+  margin-top: 8px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  background: #0d6efd;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(13, 110, 253, 0.4);
+}
+
+.contact-form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Status */
+.form-status {
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+/* Social Icons */
+.social-icons {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+}
+
+.social-icons a {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Facebook */
+.social-icons a.facebook {
+  background: #1877f2;
+}
+.social-icons a.facebook:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 22px rgba(24, 119, 242, 0.8);
+}
+
+/* Instagram */
+.social-icons a.instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+.social-icons a.instagram:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 26px rgba(214, 36, 159, 0.9);
+}
+
+/* GitHub */
+.social-icons a.github {
+  background: #24292e;
+}
+.social-icons a.github:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .social-icons a {
+    width: 46px;
+    height: 46px;
+    font-size: 20px;
+  }
+}
+
+
+/* ☀️ LIGHT MODE – FORCE CONTACT SUBMIT BUTTON COLOR */
+.light .contact-form button {
+  background-color: var(--accent-color) !important;
+  color: #ffffff !important;
+  border: 2px solid var(--accent-color) !important;
+}
+
+/* 🔥 HOVER FIX (THIS IS THE KEY PART) */
+.light .contact-form button:hover {
+  background-color: var(--accent-hover) !important;
+  color: #ffffff !important;
+  border-color: var(--accent-hover) !important;
+}

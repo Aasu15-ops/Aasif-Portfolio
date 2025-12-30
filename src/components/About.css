@@ -1,0 +1,41 @@
+.about {
+  padding: 80px 20px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  display: flex;
+  justify-content: center;
+}
+
+.about-container {
+  max-width: 900px;
+  text-align: center;
+}
+
+.about-container h2 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: #61dafb;
+}
+
+.about-text {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #c9d1d9;
+  margin-bottom: 20px;
+}
+
+.about-text span {
+  color: #61dafb;
+  font-weight: bold;
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .about-container h2 {
+    font-size: 28px;
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+}

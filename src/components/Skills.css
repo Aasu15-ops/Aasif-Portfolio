@@ -1,0 +1,100 @@
+/* ===== SKILLS SECTION ===== */
+.skills {
+  padding: 80px 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.skills-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.skills-subtitle {
+  color: var(--muted-text);
+  margin-bottom: 50px;
+}
+
+/* ===== GROUP ===== */
+.skills-group {
+  margin-bottom: 55px;
+}
+
+.skills-group h3 {
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+}
+
+/* ===== GRID (CONTROLLED LAYOUT) ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 👈 DESKTOP */
+  gap: 18px;
+}
+
+/* ===== CARD ===== */
+.skill-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  padding: 18px 10px;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* ICON */
+.skill-card svg {
+  font-size: 32px;
+  color: var(--accent-color);
+}
+
+/* HOVER */
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Laptop / Tablet */
+@media (max-width: 1024px) {
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Tablet / Large Mobile */
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skills h2 {
+    font-size: 1.8rem;
+  }
+
+  .skill-card svg {
+    font-size: 28px;
+  }
+}

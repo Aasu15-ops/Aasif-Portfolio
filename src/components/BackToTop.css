@@ -1,0 +1,29 @@
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #61dafb;
+  color: #0d1117;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 1000;
+}
+
+.back-to-top:hover {
+  background-color: #4fc3e8;
+  transform: translateY(-4px);
+}
+
+/* 📱 Mobile adjustment */
+@media (max-width: 600px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+}

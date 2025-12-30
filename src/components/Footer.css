@@ -1,0 +1,35 @@
+.footer {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  padding: 25px 20px;
+  text-align: center;
+}
+
+.footer span {
+  color: #61dafb;
+  font-weight: bold;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #8b949e;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #61dafb;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+}

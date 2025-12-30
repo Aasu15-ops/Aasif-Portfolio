@@ -1,0 +1,27 @@
+.theme-toggle {
+  position: fixed;
+  bottom: 90px;
+  right: 30px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+  font-weight: bold;
+  z-index: 1500;
+  transition: background 0.3s ease;
+}
+
+.theme-toggle:hover {
+  opacity: 0.9;
+}
+
+/* 📱 Mobile */
+@media (max-width: 600px) {
+  .theme-toggle {
+    right: 20px;
+    bottom: 80px;
+  }
+}
