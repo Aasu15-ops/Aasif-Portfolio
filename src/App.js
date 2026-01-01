@@ -10,6 +10,10 @@ import BackToTop from "./components/BackToTop";
 import Resume from "./components/Resume";
 import ThemeToggle from "./components/ThemeToggle"; 
 
+<h1 style={{ color: "red" }}>
+  Portfolio Updated 🔥
+</h1>
+
 function App() {
   return (
     <>
