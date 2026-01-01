@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Projects.css";
 
-// Images
+// images
 import img1 from "../assets/Banks_states.jpg";
 import img2 from "../assets/Home.png";
 import img3 from "../assets/Merchant.jpg";
@@ -13,15 +13,16 @@ const projects = [
     id: 1,
     title: "UPI Payment Analysis Dashboard",
     description:
-      "Multi-page Power BI dashboard analyzing UPI transactions, banks performance, state-wise trends, merchant activity and transaction growth patterns.",
+      "Multi-page Power BI dashboard analyzing UPI transactions, banks performance, state-wise trends, merchant activity and growth patterns.",
     tech: ["Power BI", "DAX", "Excel"],
     images: [img1, img2, img3, img4, img5],
+    github: "https://github.com/Aasu15-ops",
   },
   {
     id: 2,
     title: "UPI Transactions Data Analysis (Python)",
     description:
-      "Exploratory data analysis of UPI transactions to uncover trends across transaction types, banks, states, merchants, and time periods.",
+      "EDA on UPI transactions to uncover trends across banks, states, merchants and time.",
     tech: ["Python", "Pandas", "Matplotlib", "Seaborn"],
     github: "https://github.com/Aasu15-ops",
   },
@@ -29,15 +30,15 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="projects-section" id="projects">
-      <h2 className="section-title">Projects</h2>
+    <section className="projects">
+      <h2 className="projects-title">Projects</h2>
 
       <div className="projects-grid">
-        {projects.map((project) =>
-          project.id === 1 ? (
-            <SliderProject key={project.id} project={project} />
+        {projects.map((p) =>
+          p.id === 1 ? (
+            <ManualSliderProject key={p.id} project={p} />
           ) : (
-            <NormalProject key={project.id} project={project} />
+            <NormalProject key={p.id} project={p} />
           )
         )}
       </div>
@@ -45,79 +46,98 @@ const Projects = () => {
   );
 };
 
-/* ---------- PROJECT 1 (WITH SLIDER + MODAL) ---------- */
-const SliderProject = ({ project }) => {
+/* ---------- PROJECT 1 : MANUAL SLIDER + MODAL SLIDER ---------- */
+const ManualSliderProject = ({ project }) => {
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setIndex((prev) =>
-        prev === project.images.length - 1 ? 0 : prev + 1
-      );
-    }, 2500);
+  const prev = () => {
+    setIndex(index === 0 ? project.images.length - 1 : index - 1);
+  };
 
-    return () => clearInterval(timer);
-  }, [project.images.length]);
+  const next = () => {
+    setIndex(index === project.images.length - 1 ? 0 : index + 1);
+  };
 
   return (
     <>
       <div className="project-card">
-        <div className="slider" onClick={() => setOpen(true)}>
+        <div className="slider-wrapper">
+          <button className="nav-btn left" onClick={prev}>❮</button>
+
           <img
             src={project.images[index]}
             alt={project.title}
-            className="project-img"
+            className="project-img clickable"
+            onClick={() => setOpen(true)}
           />
-          <div className="tap-text">Tap to enlarge</div>
+
+          <button className="nav-btn right" onClick={next}>❯</button>
         </div>
 
         <h3>{project.title}</h3>
         <p>{project.description}</p>
 
-        <div className="tech-stack">
-          {project.tech.map((tech, i) => (
-            <span key={i}>{tech}</span>
+        <div className="tech">
+          {project.tech.map((t, i) => (
+            <span key={i}>{t}</span>
           ))}
         </div>
+
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noreferrer"
+          className="github-btn"
+        >
+          View on GitHub
+        </a>
       </div>
 
-      {/* MODAL (FULL IMAGE VIEW) */}
+      {/* 🔍 MODAL WITH SLIDER BUTTONS */}
       {open && (
-        <div className="modal" onClick={() => setOpen(false)}>
-          <img
-            src={project.images[index]}
-            alt="full-view"
-            className="modal-img"
-          />
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <button className="close-btn" onClick={() => setOpen(false)}>
+              ✕
+            </button>
+
+            <button className="modal-nav left" onClick={prev}>❮</button>
+
+            <img
+              src={project.images[index]}
+              alt="Full view"
+              className="modal-img"
+            />
+
+            <button className="modal-nav right" onClick={next}>❯</button>
+          </div>
         </div>
       )}
     </>
   );
 };
 
-/* ---------- PROJECT 2 (NORMAL CARD) ---------- */
+/* ---------- PROJECT 2 : SIMPLE ---------- */
 const NormalProject = ({ project }) => (
   <div className="project-card">
     <h3>{project.title}</h3>
     <p>{project.description}</p>
 
-    <div className="tech-stack">
-      {project.tech.map((tech, i) => (
-        <span key={i}>{tech}</span>
+    <div className="tech">
+      {project.tech.map((t, i) => (
+        <span key={i}>{t}</span>
       ))}
     </div>
 
-    {project.github && (
-      <a
-        href={project.github}
-        target="_blank"
-        rel="noreferrer"
-        className="project-btn"
-      >
-        View on GitHub
-      </a>
-    )}
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noreferrer"
+      className="github-btn"
+    >
+      View on GitHub
+    </a>
   </div>
 );
 
