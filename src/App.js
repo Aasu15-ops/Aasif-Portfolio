@@ -1,6 +1,6 @@
 
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
+// import Home from "./components/Home";
 import Banner from "./components/Banner";
 import About from "./components/About";
 import Skills from "./components/Skills";
@@ -20,7 +20,7 @@ function App() {
     <>
       <Navbar/>
       <Banner/>
-      <Home/>
+      {/* <Home/> */}
       <Resume />
       <Skills />
       <About />

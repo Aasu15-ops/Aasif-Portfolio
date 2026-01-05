@@ -2,7 +2,7 @@ import "./Home.css";
 
 function Home() {
   return (
-    <section className="home" id="home">
+    <section className="home" >
       <div className="home-content">
         <h1>
           Hi, I'm <span>Aasif</span>

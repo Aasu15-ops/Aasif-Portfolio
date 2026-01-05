@@ -1,11 +1,16 @@
 import "./Contact.css";
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaGithub,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 function Contact() {
   const form = useRef();
-  const [status, setStatus] = useState(""); // success / error message
+  const [status, setStatus] = useState("");
   const [loading, setLoading] = useState(false);
 
   const sendEmail = (e) => {
@@ -15,10 +20,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_2amx40j",   // 🔴 EmailJS → Email Services → Service ID
-        "template_89mll2j",  // 🔴 EmailJS → Email Templates → Template ID
+        "service_2amx40j",   // EmailJS Service ID
+        "template_89mll2j",  // EmailJS Template ID
         form.current,
-        "nOgEKMIVzDTLbNUEJ"  // 🔴 EmailJS → Account → API Keys → Public Key
+        "nOgEKMIVzDTLbNUEJ"  // EmailJS Public Key
       )
       .then(
         () => {
@@ -101,6 +106,16 @@ function Contact() {
             aria-label="GitHub"
           >
             <FaGithub />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/md-aasif-ansari-94a587306"
+            className="linkedin"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedinIn />
           </a>
         </div>
       </div>

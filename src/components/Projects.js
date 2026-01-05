@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Projects.css";
 
 // images
@@ -30,12 +30,13 @@ const projects = [
 
 const Projects = () => {
   return (
-    <section className="projects" id = "projects">
+    <section className="projects" id="projects">
       <h2 className="projects-title">Projects</h2>
+      <div className="center-divider"></div>
 
       <div className="projects-grid">
         {projects.map((p) =>
-          p.id === 1 ? (
+          p.images ? (
             <ManualSliderProject key={p.id} project={p} />
           ) : (
             <NormalProject key={p.id} project={p} />
@@ -46,18 +47,25 @@ const Projects = () => {
   );
 };
 
-/* ---------- PROJECT 1 : MANUAL SLIDER + MODAL SLIDER ---------- */
+/* ===============================
+   PROJECT 1 : SLIDER + MODAL
+================================ */
 const ManualSliderProject = ({ project }) => {
   const [index, setIndex] = useState(0);
   const [open, setOpen] = useState(false);
 
-  const prev = () => {
-    setIndex(index === 0 ? project.images.length - 1 : index - 1);
-  };
+  const prev = () =>
+    setIndex((i) => (i === 0 ? project.images.length - 1 : i - 1));
 
-  const next = () => {
-    setIndex(index === project.images.length - 1 ? 0 : index + 1);
-  };
+  const next = () =>
+    setIndex((i) => (i === project.images.length - 1 ? 0 : i + 1));
+
+  /* ✅ ESC key support */
+  useEffect(() => {
+    const handleEsc = (e) => e.key === "Escape" && setOpen(false);
+    if (open) window.addEventListener("keydown", handleEsc);
+    return () => window.removeEventListener("keydown", handleEsc);
+  }, [open]);
 
   return (
     <>
@@ -94,23 +102,41 @@ const ManualSliderProject = ({ project }) => {
         </a>
       </div>
 
-      {/* 🔍 MODAL WITH SLIDER BUTTONS */}
+      {/* 🔍 MODAL */}
       {open && (
-        <div className="modal-overlay">
-          <div className="modal-content">
-            <button className="close-btn" onClick={() => setOpen(false)}>
+        <div
+          className="modal-overlay"
+          onClick={() => setOpen(false)}   // background close
+        >
+          <div
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()} // prevent accidental close
+          >
+            {/* ❌ CLOSE */}
+            <button
+              className="close-btn"
+              onClick={() => setOpen(false)}
+              aria-label="Close image"
+            >
               ✕
             </button>
 
-            <button className="modal-nav left" onClick={prev}>❮</button>
+            {/* ⬅ PREV */}
+            <button className="modal-nav left" onClick={prev}>
+              ❮
+            </button>
 
+            {/* IMAGE */}
             <img
               src={project.images[index]}
-              alt="Full view"
+              alt="Full Preview"
               className="modal-img"
             />
 
-            <button className="modal-nav right" onClick={next}>❯</button>
+            {/* ➡ NEXT */}
+            <button className="modal-nav right" onClick={next}>
+              ❯
+            </button>
           </div>
         </div>
       )}
@@ -118,7 +144,9 @@ const ManualSliderProject = ({ project }) => {
   );
 };
 
-/* ---------- PROJECT 2 : SIMPLE ---------- */
+/* ===============================
+   PROJECT 2 : SIMPLE CARD
+================================ */
 const NormalProject = ({ project }) => (
   <div className="project-card">
     <h3>{project.title}</h3>

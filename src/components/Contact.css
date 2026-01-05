@@ -124,6 +124,15 @@
   box-shadow: 0 0 22px rgba(255, 255, 255, 0.6);
 }
 
+/* LinkedIn */
+.social-icons a.linkedin {
+  background: #0a66c2;
+}
+.social-icons a.linkedin:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 0 22px rgba(10, 102, 194, 0.8);
+}
+
 /* Mobile */
 @media (max-width: 480px) {
   .social-icons a {

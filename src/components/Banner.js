@@ -4,7 +4,7 @@ import profile from "../assets/aasifdp.jpeg";
 
 function Banner() {
   return (
-    <section className="banner">
+    <section className="banner" id="home">
       
       {/* LEFT CONTENT */}
       <div className="banner-text">
