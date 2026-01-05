@@ -7,10 +7,14 @@ function About() {
         <h2>About Me</h2>
 
         <p className="about-text">
-          Hello! I'm <span>Aasif</span>, a passionate Frontend Developer who
-          loves building modern, responsive, and user-friendly web
-          applications. I enjoy working with React and continuously learning
-          new technologies to improve my skills.
+          Hello! I'm <span>Aasif</span>, I am a data-driven professional with hands-on experience in data analysis,
+reporting, and dashboard development. My work focuses on turning complex datasets
+into clear insights using Excel, SQL, Power BI, and Python.
+
+I believe data tells a story, and my goal is to help businesses understand that
+story to make smarter decisions. I am motivated, detail-oriented, and always
+eager to learn new tools and techniques in analytics.
+
         </p>
 
         <p className="about-text">
