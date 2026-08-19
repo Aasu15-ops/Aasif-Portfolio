@@ -9,7 +9,7 @@ function Resume() {
       <div className="resume-buttons">
         {/* ✅ PREVIEW (NEW TAB – GUARANTEED) */}
         <a
-          href={`${window.location.origin}/AASIF-FlowCV-Resume-20251115.pdf`}
+          href={`${window.location.origin}/MD_Aasif_Ansari_Resume_ds.pdf`}
           target="_blank"
           rel="noopener noreferrer"
           className="resume-btn secondary"
