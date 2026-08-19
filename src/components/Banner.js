@@ -25,7 +25,7 @@ function Banner() {
           <a href="#projects" className="btn primary">
             View Projects
           </a>
-          <a href="c:\Users\ASUS\Downloads\MD_Aasif_Ansari_Resume_ds.pdf" className="btn outline">
+          <a href="\MD_Aasif_Ansari_Resume_ds.pdf" className="btn outline">
             Download Resume
           </a>
         </div>
@@ -41,3 +41,4 @@ function Banner() {
 }
 
 export default Banner;
+
