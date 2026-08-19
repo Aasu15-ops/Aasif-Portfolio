@@ -18,7 +18,6 @@ import {
 import {
   SiPandas,
   SiNumpy,
-  SiTableau,
   SiJupyter
 } from "react-icons/si";
 
@@ -62,7 +61,8 @@ function Skills() {
           <h3>Data Visualization</h3>
           <div className="skills-grid">
             <div className="skill-card"><FaChartBar /><span>Power BI</span></div>
-            <div className="skill-card"><SiTableau /><span>Tableau</span></div>
+            <div className="skill-card"><FaChartBar /><span>Tableau</span></div>
+    
           </div>
         </div>
 
