@@ -19,8 +19,9 @@ function Resume() {
 
         {/* ✅ DOWNLOAD */}
         <a
-          href="\MD_Aasif_Ansari_Resume_ds.pdf"
+          href="/MD_Aasif_Ansari_Resume_ds.pdf"
           className="resume-btn primary"
+          download
         >
           Download Resume
         </a>

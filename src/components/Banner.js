@@ -25,7 +25,7 @@ function Banner() {
           <a href="#projects" className="btn primary">
             View Projects
           </a>
-          <a href="\MD_Aasif_Ansari_Resume_ds.pdf" className="btn outline">
+          <a href="/MD_Aasif_Ansari_Resume_ds.pdf" className="btn outline" download>
             Download Resume
           </a>
         </div>
